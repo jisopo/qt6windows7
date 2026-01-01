@@ -148,13 +148,13 @@ static constexpr QColor getSysColor(winrt::Windows::UI::Color &&color)
     const QColor abgr = QColor::fromRgba(qvariant_cast<DWORD>(value));
     if (!abgr.isValid())
         return {};
-    const QColor accent = QColor::fromRgb(abgr.blue(), abgr.green(), abgr.red(), abgr.alpha());
-    const QColor accentLight = accent.lighter(120);
-    const QColor accentLighter = accentLight.lighter(120);
-    const QColor accentLightest = accentLighter.lighter(120);
-    const QColor accentDark = accent.darker(120);
-    const QColor accentDarker = accentDark.darker(120);
-    const QColor accentDarkest = accentDarker.darker(120);
+    accent = QColor::fromRgb(abgr.blue(), abgr.green(), abgr.red(), abgr.alpha());
+    accentLight = accent.lighter(120);
+    accentLighter = accentLight.lighter(120);
+    accentLightest = accentLighter.lighter(120);
+    accentDark = accent.darker(120);
+    accentDarker = accentDark.darker(120);
+    accentDarkest = accentDarker.darker(120);
 #endif
     switch (level) {
     case AccentColorDarkest:
